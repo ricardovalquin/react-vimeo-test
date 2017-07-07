@@ -11,16 +11,52 @@ var config = {
   },
   module: {
     rules: [
-
       {
         test: /\.scss$/,
         use: [
-          {loader: "style-loader" },// creates style nodes from JS strings
+          {loader: "style-loader"},// creates style nodes from JS strings
           {loader: "css-loader"}, // translates CSS into CommonJS
           {loader: "sass-loader"} // compiles Sass to CSS
         ]
       },
-      {test: /\.(js)$/, use: 'babel-loader'}
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader', 'eslint-loader']
+      },
+      {
+        test: /\.(jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader', 'eslint-loader']
+      },
+      {
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000
+            }
+          }
+        ]
+      },
+      {
+        exclude: [
+          /\.html$/,
+          /\.(js|jsx)$/,
+          /\.(styl|css|scss)$/,
+          /\.json$/,
+          /\.bmp$/,
+          /\.gif$/,
+          /\.jpe?g$/,
+          /\.png$/
+        ],
+        use: [
+          {
+            loader: 'file-loader'
+          }
+        ]
+      }
     ]
   },
   devServer: {
