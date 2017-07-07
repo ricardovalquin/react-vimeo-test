@@ -1,9 +1,12 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var PropTypes = require('prop-types');
+/* global document */
+import ReactDOM from 'react-dom';
+/* eslint-disable no-unused-vars */
+import React from 'react';
+import App from './components/App';
+/* eslint-enable no-unused-vars */
+
 require('./index.scss');
 
-var App = require('./components/App');
 
 ReactDOM.render(
   <App />,
