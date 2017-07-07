@@ -1,0 +1,55 @@
+{
+  "name": "react-vimeo-test",
+  "version": "1.0.0",
+  "description": "vimeo test app made on ReactJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create": "webpack",
+    "start": "webpack-dev-server --open",
+    "build": "NODE_ENV='production' webpack -p",
+    "firebase-init": "firebase login && firebase init",
+    "deploy": "npm run build && firebase deploy"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricardovalquin/react-vimeo-test.git"
+  },
+  "author": "ricardovalquin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ricardovalquin/react-vimeo-test/issues"
+  },
+  "homepage": "https://github.com/ricardovalquin/react-vimeo-test#readme",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "prop-types": "^15.5.10",
+    "query-string": "^4.3.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router-dom": "^4.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.4",
+    "firebase-tools": "^3.9.1",
+    "html-webpack-plugin": "^2.29.0",
+    "node-sass": "^4.5.3",
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.1.0",
+    "webpack-dev-server": "^2.5.0"
+  }
+}
