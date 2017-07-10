@@ -7,3 +7,4 @@ https://www.robinwieruch.de/tips-to-learn-react-redux/
 https://github.com/airbnb/javascript
 https://github.com/airbnb/javascript/tree/master/react#basic-rules
 https://www.robinwieruch.de/react-eslint-webpack-babel/#eslintRulesReact
+https://github.com/yuanyan/halogen
