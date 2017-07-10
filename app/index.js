@@ -7,8 +7,15 @@ import App from './components/App';
 
 require('./index.scss');
 
+const obj = {
+  title: 'hello, title',
+  message: 'this is a test message'
+};
 
 ReactDOM.render(
-  <App />,
+  <App
+    title={obj.title}
+    message={obj.message}
+  />,
   document.getElementById('app')
 );
