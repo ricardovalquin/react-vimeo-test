@@ -4,7 +4,7 @@
   "description": "vimeo test app made on ReactJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "create": "webpack",
     "start": "webpack-dev-server --open",
     "build": "NODE_ENV='production' webpack -p",
@@ -13,9 +13,18 @@
   },
   "babel": {
     "presets": [
+      "es2015",
       "env",
       "react"
     ]
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/mocks/fileTransformer.js",
+      "\\.(css|scss)$": "<rootDir>/mocks/styleMock.js"
+    },
+    "moduleFileExtensions": ["js", "jsx"],
+    "moduleDirectories": ["node_modules"]
   },
   "repository": {
     "type": "git",
@@ -40,10 +49,14 @@
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.5.2",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "chai": "^4.0.2",
     "css-loader": "^0.28.4",
+    "enzyme": "^2.9.1",
     "eslint": "^4.1.1",
     "eslint-config-airbnb": "^15.0.2",
     "eslint-loader": "^1.9.0",
@@ -53,10 +66,12 @@
     "file-loader": "^0.11.2",
     "firebase-tools": "^3.9.1",
     "html-webpack-plugin": "^2.29.0",
+    "jest": "^20.0.4",
     "node-sass": "^4.5.3",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-test-renderer": "^15.6.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
