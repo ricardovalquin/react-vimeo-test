@@ -1,14 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import Layout from './Layout/Layout';
 /* eslint-enable no-unused-vars */
 
-function App() {
+function Footer() {
   return (
-    <div>
-      <Layout/>
-    </div>
+    <h1>Footer</h1>
   );
 }
 
-module.exports = App;
+module.exports = Footer;
