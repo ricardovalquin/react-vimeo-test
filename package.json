@@ -23,8 +23,13 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/mocks/fileTransformer.js",
       "\\.(css|scss)$": "<rootDir>/mocks/styleMock.js"
     },
-    "moduleFileExtensions": ["js", "jsx"],
-    "moduleDirectories": ["node_modules"]
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ]
   },
   "repository": {
     "type": "git",
@@ -73,6 +78,7 @@
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.6.1",
     "sass-loader": "^6.0.6",
+    "sinon": "^2.3.7",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.1.0",
