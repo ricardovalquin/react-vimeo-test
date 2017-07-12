@@ -3,7 +3,10 @@
   border-bottom: 1px solid $border-color;
   height: 6rem;
   padding-right: 2rem;
+  position: fixed;
+  top: 0;
   width: 100%;
+  z-index: 2;
 
   .search-wp {
     float: right;

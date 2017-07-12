@@ -5,13 +5,10 @@ import Search from '../Search/Search';
 
 function Header() {
   return (
-    <div>
-      <div className="header-wp">
-        <h1>Header</h1>
-        <Search />
-      </div>
+    <div className="header-wp">
+      <Search />
     </div>
   );
 }
 
-module.exports = Header;
+export default Header;
