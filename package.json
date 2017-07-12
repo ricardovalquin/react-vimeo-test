@@ -9,7 +9,9 @@
     "start": "webpack-dev-server --open",
     "build": "NODE_ENV='production' webpack -p",
     "firebase-init": "firebase login && firebase init",
-    "deploy": "npm run build && firebase deploy"
+    "deploy": "npm run build && firebase deploy",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "babel": {
     "presets": [
@@ -82,6 +84,7 @@
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.1.0",
-    "webpack-dev-server": "^2.5.0"
+    "webpack-dev-server": "^2.5.0",
+    "@storybook/react": "^3.1.8"
   }
 }
