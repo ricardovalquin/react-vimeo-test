@@ -1,18 +1,34 @@
+import PropTypes from 'prop-types';
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import VideoPreview from '../VideoPreview/VideoPreview';
+import Spinner from '../../utils/Spinner';
 /* eslint-enable no-unused-vars */
-import vimeoLogo from '../../assets/img/vimeo-logo.png';
 
-function Content() {
+function Content(props) {
   return (
     <div>
-      <h1>Content</h1>
-      <img
-        src={vimeoLogo}
-        alt="Logo"
-      />
+      {props.videos.length > 0 ?
+        props.videos.map(
+          video =>
+            <VideoPreview
+              key={video.name}
+              img={video.pictures.sizes[2].link}
+              description={video.name}
+            />
+        )
+        : <Spinner color="#000"/>
+      }
     </div>
   );
 }
 
-module.exports = Content;
+Content.propTypes = {
+  videos: PropTypes.array.isRequired
+};
+
+Content.defaultProps = {
+  videos: []
+};
+
+export default Content;
