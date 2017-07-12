@@ -25,7 +25,7 @@ class Search extends React.Component {
   }
 
   handleKeyPress(event) {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && this.state.query !== '') {
       this.props.onSearch(this.state.query);
       this.setState({ query: '' });
     }
