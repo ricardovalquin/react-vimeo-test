@@ -27,7 +27,7 @@ class Search extends React.Component {
 
   handleKeyPress(event) {
     if (event.key === 'Enter') {
-      api.searchVideos(this.state.query).then((results) => {
+      api.searchVideos(this.state.query, 1).then((results) => {
         this.setState({ query: '', videos: results });
       }
       );
