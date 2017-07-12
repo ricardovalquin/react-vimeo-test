@@ -1,0 +1,11 @@
+.header-wp {
+  background-color: $light-bg-color;
+  border-bottom: 1px solid $border-color;
+  height: 6rem;
+  padding-right: 2rem;
+  width: 100%;
+
+  .search-wp {
+    float: right;
+  }
+}
