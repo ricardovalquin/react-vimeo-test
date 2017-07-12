@@ -1,0 +1,22 @@
+.videoPreview-wp {
+  cursor: pointer;
+  display: inline-block;
+  height: 18.6rem;
+  margin: 1rem;
+  outline: none;
+  width: 30rem;
+
+  figure {
+    img {
+      height: auto;
+      width: 100%;
+    }
+    figcaption {
+      font-size: 1rem;
+      overflow: hidden;
+      text-align: left;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
