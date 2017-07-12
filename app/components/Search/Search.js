@@ -1,15 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 /* eslint-enable no-unused-vars */
-import api from '../../utils/api';
+import PropTypes from 'prop-types';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      query: '',
-      videos: null
+      query: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -27,10 +26,8 @@ class Search extends React.Component {
 
   handleKeyPress(event) {
     if (event.key === 'Enter') {
-      api.searchVideos(this.state.query, 1).then((results) => {
-        this.setState({ query: '', videos: results });
-      }
-      );
+      this.props.onSearch(this.state.query);
+      this.setState({ query: '' });
     }
   }
 
@@ -50,5 +47,9 @@ class Search extends React.Component {
     );
   }
 }
+
+Search.propTypes = {
+  onSearch: PropTypes.func.isRequired
+};
 
 export default Search;

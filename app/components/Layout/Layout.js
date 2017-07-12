@@ -12,8 +12,11 @@ class Layout extends React.Component {
     super();
 
     this.state = {
-      videos: []
+      videos: [],
+      page: 1
     };
+
+    this.searchVideos = this.searchVideos.bind(this);
   }
 
   componentDidMount() {
@@ -23,10 +26,17 @@ class Layout extends React.Component {
       });
   }
 
+  searchVideos(query) {
+    this.setState({ videos: [] });
+    api.searchVideos(query, 1).then((results) => {
+      this.setState({ videos: results.data, page: 1 });
+    });
+  }
+
   render() {
     return (
       <div className="layout-wp">
-        <Header/>
+        <Header searchVideos={this.searchVideos}/>
         <Nav/>
         <div className="page-wrapper">
           <Content videos={this.state.videos}/>
