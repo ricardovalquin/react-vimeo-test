@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import Pager from 'react-pager';
 import Content from '../Content/Content';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
@@ -13,23 +14,34 @@ class Layout extends React.Component {
 
     this.state = {
       videos: [],
-      page: 1
+      page: 0,
+      visiblePage: 3,
+      total: 0,
+      category: 'animation'
     };
 
     this.searchVideos = this.searchVideos.bind(this);
+    this.handlePageChanged = this.handlePageChanged.bind(this);
   }
 
   componentDidMount() {
-    api.searchVideos('comedy', 1)
+    api.searchVideos(this.state.category, 1)
       .then((results) => {
-        this.setState({ videos: results.data });
+        this.setState({ videos: results.data, total: results.total });
       });
   }
 
   searchVideos(query) {
-    this.setState({ videos: [] });
+    this.setState({ videos: [], category: query });
     api.searchVideos(query, 1).then((results) => {
-      this.setState({ videos: results.data, page: 1 });
+      this.setState({ videos: results.data, page: results.page, total: results.total });
+    });
+  }
+
+  handlePageChanged(newPage) {
+    this.setState({ videos: [] });
+    api.searchVideos(this.state.category, newPage + 1).then((results) => {
+      this.setState({ videos: results.data, page: results.page - 1, total: results.total });
     });
   }
 
@@ -40,6 +52,16 @@ class Layout extends React.Component {
         <Nav/>
         <div className="page-wrapper">
           <Content videos={this.state.videos}/>
+          <div className="pagger-wp">
+            <Pager
+              total={this.state.total}
+              current={this.state.page}
+              visiblePages={this.state.visiblePage}
+              titles={{ first: '<|', last: '>|' }}
+              className="pagination-sm pull-right"
+              onPageChanged={this.handlePageChanged}
+            />
+          </div>
         </div>
         <Footer/>
       </div>

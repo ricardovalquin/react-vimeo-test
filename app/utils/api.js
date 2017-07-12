@@ -8,7 +8,7 @@ const vimeoApi = {
 
 function getVideos(category, page) {
   return axios.get(`${vimeoApi.API_BASE_URL}categories/${category}/videos?page=${page}&per_page=${vimeoApi.PER_PAGE}&access_token=${vimeoApi.ACCESS_TOKEN}`)
-    .then(response => response.data.data);
+    .then(response => response.data);
 }
 
 function searchVideos(query, page) {
