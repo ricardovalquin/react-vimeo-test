@@ -1,6 +1,7 @@
 bundle.js
 *.bundle.js
 .DS_Store
+.idea/
 .dist
 node_modules
 dist
