@@ -1,0 +1,39 @@
+
+html {font-size: 62.5%;}
+
+.container {
+  font-size: 0;
+  padding: 0 10px;
+  position: relative;
+
+  @media screen and (min-width: $sm-min-width) {
+    margin: 0 auto;
+    padding: 0 50px;
+  }
+
+  @media screen and (min-width: $md-min-width) {
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  @media screen and (min-width: $lg-min-width) {
+    padding: 0 30px;
+    margin: 0 auto;
+    max-width: 1280px;
+  }
+
+  @media screen and (min-width: $xl-min-width) {
+    padding: 0 76px;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+//Variables declaration
+
+//colors:
+$light-bg-color: #EEE;
+$border-color: #D2D2D2;
+

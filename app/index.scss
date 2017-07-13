@@ -9,14 +9,18 @@ body {
   height: 100% !important;
 }
 
-//Variables declaration
-//breakpoints
+//breakpoints:
 $sm-min-width: 544px;
 $md-min-width: 768px;
 $lg-min-width: 992px;
 $xl-min-width: 1200px;
 
-
 //Import partials
 @import "reset";
+@import "commons";
 @import "components/app";
+@import "components/Layout/layout";
+@import "components/Header/header";
+@import "components/Search/search";
+@import "components/VideoPreview/videoPreview";
+@import "components/Footer/footer";

@@ -1,0 +1,18 @@
+.layout-wp {
+  position: relative;
+
+  .page-wrapper {
+    margin-bottom: -3rem;
+    margin-top: 7rem;
+    min-height: 100%;
+    z-index: 1;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 3rem;
+    }
+  }
+
+}
+

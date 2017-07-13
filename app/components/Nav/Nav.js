@@ -1,14 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import Layout from './Layout/Layout';
 /* eslint-enable no-unused-vars */
 
-function App() {
+function Nav() {
   return (
     <div>
-      <Layout/>
+      <h1>Nav</h1>
     </div>
   );
 }
 
-module.exports = App;
+module.exports = Nav;
