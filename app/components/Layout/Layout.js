@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Pager from 'react-pager';
-import Content from '../Content/Content';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
@@ -50,19 +49,13 @@ class Layout extends React.Component {
       <div className="layout-wp">
         <Header searchVideos={this.searchVideos}/>
         <Nav/>
-        <div className="page-wrapper">
-          <Content videos={this.state.videos}/>
-          <div className="pagger-wp">
-            <Pager
-              total={this.state.total}
-              current={this.state.page}
-              visiblePages={this.state.visiblePage}
-              titles={{ first: '<|', last: '>|' }}
-              className="pagination-sm pull-right"
-              onPageChanged={this.handlePageChanged}
-            />
-          </div>
-        </div>
+        <Category videos={ this.state.videos }
+            pagination={{ total: this.state.total,
+            current: this.state.page,
+            visiblePages: this.state.visiblePage,
+            title: { first: '<|', last: '>|' },
+            onPageChanged: this.handlePageChanged }}
+        />
         <Footer/>
       </div>
     );
