@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import Pager from 'react-pager';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Nav from '../Nav/Nav';
+import Category from '../Category/Category';
 /* eslint-enable no-unused-vars */
 import api from '../../utils/api';
+
 
 class Layout extends React.Component {
   constructor() {
@@ -24,7 +25,7 @@ class Layout extends React.Component {
   }
 
   componentDidMount() {
-    api.searchVideos(this.state.category, 1)
+    api.getVideos(this.state.category, 1)
       .then((results) => {
         this.setState({ videos: results.data, total: results.total });
       });
@@ -50,7 +51,7 @@ class Layout extends React.Component {
         <Header searchVideos={this.searchVideos}/>
         <Nav/>
         <Category videos={ this.state.videos }
-            pagination={{ total: this.state.total,
+          pagination={{ total: this.state.total,
             current: this.state.page,
             visiblePages: this.state.visiblePage,
             title: { first: '<|', last: '>|' },

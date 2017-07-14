@@ -1,24 +1,31 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import PropTypes from 'prop-types';
+import Pager from 'react-pager';
 import Content from '../Content/Content';
 /* eslint-enable no-unused-vars */
 
-function Category(props) {
+function Category({ videos, pagination }) {
   return (
     <div className="page-wrapper">
-      <Content videos={props.videos}/>
+      <Content videos={videos}/>
       <div className="pagger-wp">
         <Pager
-          total={props.pagination.total}
-          current={props.pagination.current}
-          visiblePages={props.pagination.visiblePages}
-          titles={props.pagination.titles}
+          total={pagination.total}
+          current={pagination.current}
+          visiblePages={pagination.visiblePages}
+          titles={pagination.titles}
           className="pagination-sm pull-right"
-          onPageChanged={props.handlePageChanged}
+          onPageChanged={pagination.handlePageChanged}
         />
       </div>
     </div>
   );
 }
+
+Category.propTypes = {
+  videos: PropTypes.array.isRequired,
+  pagination: PropTypes.object.isRequired
+};
 
 export default Category;
