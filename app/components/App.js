@@ -6,9 +6,9 @@ import Layout from './Layout/Layout';
 function App() {
   return (
     <div>
-      <Layout/>
+      <Layout />
     </div>
   );
 }
 
-module.exports = App;
+export default App;

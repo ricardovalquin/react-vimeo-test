@@ -15,6 +15,8 @@ function Content(props) {
               key={video.name}
               img={video.pictures.sizes[2].link}
               description={video.name}
+              videoUrl={video.uri}
+              onClickVideo={props.viewDetails}
             />
         )
         : <Spinner color="#000"/>
@@ -24,7 +26,8 @@ function Content(props) {
 }
 
 Content.propTypes = {
-  videos: PropTypes.array.isRequired
+  videos: PropTypes.array.isRequired,
+  viewDetails: PropTypes.func.isRequired
 };
 
 Content.defaultProps = {
