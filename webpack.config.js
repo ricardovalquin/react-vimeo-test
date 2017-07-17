@@ -1,22 +1,23 @@
-var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
-var config = {
+const config = {
   entry: './app/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index_bundle.js',
     publicPath: '/'
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.scss$/,
         use: [
-          {loader: "style-loader"},// creates style nodes from JS strings
-          {loader: "css-loader"}, // translates CSS into CommonJS
-          {loader: "sass-loader"} // compiles Sass to CSS
+          { loader: 'style-loader' }, // creates style nodes from JS strings
+          { loader: 'css-loader' }, // translates CSS into CommonJS
+          { loader: 'sass-loader' } // compiles Sass to CSS
         ]
       },
       {
@@ -71,7 +72,7 @@ if (process.env.NODE_ENV === 'production') {
   config.plugins.push(
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
       }
     }),
     new webpack.optimize.UglifyJsPlugin()
